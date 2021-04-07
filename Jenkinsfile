@@ -22,5 +22,17 @@ pipeline {
       }
     }
 
+    stage('deliver') {
+      steps {
+        sh './jenkins/scripts/deliver.sh'
+      }
+    }
+
+    stage('end') {
+      steps {
+        sh './jenkins/scripts/kill.sh'
+      }
+    }
+
   }
 }
